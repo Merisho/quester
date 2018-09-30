@@ -102,9 +102,12 @@ func TestFinishedQuest(t *testing.T) {
 
 	quest.Start()
 	quest.PassCurrent()
-	finished := quest.IsFinished()
+	if quest.IsFinished() {
+		t.Fatal("If last mission has been reached but not passed IsFinished() must return false")
+	}
 
-	if !finished {
+	quest.PassCurrent()
+	if !quest.IsFinished() {
 		t.Fatal("If last mission has been passed IsFinished() must return true")
 	}
 }

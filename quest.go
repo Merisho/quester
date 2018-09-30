@@ -80,13 +80,13 @@ func (q *Quest) PassCurrent() error {
 		return QuestFinishedErr
 	}
 
-	q.fsm.Event(passMissionEvent)
-
 	avail := q.fsm.AvailableTransitions()
 	if len(avail) == 0 {
 		q.finished = true
 		return nil
 	}
+
+	q.fsm.Event(passMissionEvent)
 
 	return nil
 }
