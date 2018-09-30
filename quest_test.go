@@ -130,64 +130,31 @@ func TestEndHook(t *testing.T) {
 	}
 }
 
-func TestQuestFlow(t *testing.T) {
-	finalStarted := false
-	initEnded := false
+func TestForEachMission(t *testing.T) {
+	count := 0
 	quest := NewQuest()
 	quest.AddMission(Mission{
-		Name: "Init",
-		Next: "Mission 2",
-		End: func() {
-			initEnded = true
-		},
+		Name: "1",
+		Next: "2",
 	}).AddMission(Mission{
-		Name: "Mission 2",
-		Next: "Mission 3",
+		Name: "2",
+		Next: "3",
 	}).AddMission(Mission{
-		Name: "Mission 3",
-		Next: "Final",
+		Name: "3",
+		Next: "4",
 	}).AddMission(Mission{
-		Name: "Final",
-		Start: func() {
-			finalStarted = true
-		},
+		Name: "4",
+		Next: "5",
+	}).AddMission(Mission{
+		Name: "5",
+		Next: "6",
 	})
 
-	err := quest.Start()
-	if err != nil {
-		t.Fatal(err)
-	}
-	if quest.Current().Name != "Init" {
-		t.Fatal("First mission must be Init")
-	}
+	quest.ForEachMission(func(m *Mission) {
+		count++
+	})
 
-	err = quest.PassCurrent()
-	if err != nil {
-		t.Fatal(err)
-	}
-	if quest.Current().Name != "Mission 2" {
-		t.Fatal("Second mission must be Mission 2")
-	}
-	if !initEnded {
-		t.Fatal("Must call End() hook on Init mission end")
-	}
-
-	err = quest.PassCurrent()
-	if err != nil {
-		t.Fatal(err)
-	}
-	if quest.Current().Name != "Mission 3" {
-		t.Fatal("Third mission must be Mission 3")
-	}
-
-	err = quest.PassCurrent()
-	if err != nil {
-		t.Fatal(err)
-	}
-	if quest.Current().Name != "Final" {
-		t.Fatal("Last mission must be Final")
-	}
-	if !finalStarted {
-		t.Fatal("Start hook on final mission must be called")
+	if count != 5 {
+		t.Fatal("ForEachMission() must iterate over each mission in quest")
 	}
 }

@@ -123,3 +123,10 @@ func (q *Quest) IsFinished() bool {
 func (q *Quest) isStarted() bool {
 	return q.started
 }
+
+func (q *Quest) ForEachMission(c func(m *Mission)) *Quest {
+	for _, m := range q.missions {
+		c(m)
+	}
+	return q
+}
