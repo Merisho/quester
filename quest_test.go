@@ -113,23 +113,33 @@ func TestFinishedQuest(t *testing.T) {
 }
 
 func TestEndHook(t *testing.T) {
-	endHookCalled := false
+	firstMissionEndHookCalled := false
+	secondMissionEndHookCalled := false
 	quest := NewQuest()
 	quest.AddMission(Mission{
 		Name: "1",
 		Next: "2",
 		End: func() {
-			endHookCalled = true
+			firstMissionEndHookCalled = true
 		},
 	}).AddMission(Mission{
 		Name: "2",
+		End: func() {
+			secondMissionEndHookCalled = true
+		},
 	})
 
 	quest.Start()
 	quest.PassCurrent()
 
-	if !endHookCalled {
-		t.Fatal("Must call End() hook on mission leave")
+	if !firstMissionEndHookCalled {
+		t.Fatal("Must call End() hook on first mission finish")
+	}
+
+	quest.PassCurrent()
+
+	if !secondMissionEndHookCalled {
+		t.Fatal("Must call End() hook on second mission finish")
 	}
 }
 

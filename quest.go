@@ -7,6 +7,7 @@ import (
 
 const (
 	passMissionEvent = "pass"
+	finishedState = "finished"
 )
 
 var (
@@ -80,13 +81,12 @@ func (q *Quest) PassCurrent() error {
 		return QuestFinishedErr
 	}
 
-	avail := q.fsm.AvailableTransitions()
-	if len(avail) == 0 {
+	q.fsm.Event(passMissionEvent)
+
+	if q.fsm.Current() == finishedState {
 		q.finished = true
 		return nil
 	}
-
-	q.fsm.Event(passMissionEvent)
 
 	return nil
 }
@@ -95,14 +95,15 @@ func (q *Quest) createFSM() *fsm.FSM {
 	events := fsm.Events{}
 	callbacks := fsm.Callbacks{}
 	for _, m := range q.missions {
+		next := m.Next
 		if m.Next == "" {
-			continue
+			next = finishedState
 		}
 
 		e := fsm.EventDesc{
 			Name: passMissionEvent,
 			Src: []string{m.Name},
-			Dst: m.Next,
+			Dst: next,
 		}
 
 		events = append(events, e)

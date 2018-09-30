@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fbe012e-8571-4f0d-823c-f9e2dff8a515" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quest.go" beforeDir="false" afterPath="$PROJECT_DIR$/quest.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quest_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/quest_test.go" afterDir="false" />
     </list>
@@ -18,8 +17,8 @@
       <file leaf-file-name="quest_test.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/quest_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="105" column="64" selection-start-line="105" selection-start-column="64" selection-end-line="105" selection-end-column="64" />
+            <state relative-caret-position="548">
+              <caret line="141" column="47" selection-start-line="141" selection-start-column="47" selection-end-line="141" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -27,8 +26,8 @@
       <file leaf-file-name="quest.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/quest.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+            <state relative-caret-position="306">
+              <caret line="99" column="32" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -136,7 +135,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.go test github.com/merisho/questfsm">
+  <component name="RunManager" selected="Go Test.TestEndHook in github.com/merisho/quester">
     <configuration name="go build test.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="quester" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -145,6 +144,17 @@
       <filePath value="$PROJECT_DIR$/t/test.go" />
       <package value="github.com/merisho/questfsm" />
       <directory value="$PROJECT_DIR$/" />
+    </configuration>
+    <configuration name="TestEndHook in github.com/merisho/quester" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="quester" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/merisho/quester" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestEndHook$" />
     </configuration>
     <configuration name="TestEndHook in github.com/merisho/questfsm" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="quester" />
@@ -156,17 +166,6 @@
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
       <pattern value="^TestEndHook$" />
-    </configuration>
-    <configuration name="TestFinishedQuest in github.com/merisho/questfsm" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="quester" />
-      <working_directory value="$PROJECT_DIR$" />
-      <go_parameters value="-i" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/merisho/questfsm" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestFinishedQuest$" />
     </configuration>
     <configuration name="TestForEachMission in github.com/merisho/quester" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="quester" />
@@ -191,31 +190,22 @@
     </configuration>
     <list>
       <item itemvalue="Go Test.go test github.com/merisho/questfsm" />
-      <item itemvalue="Go Test.TestFinishedQuest in github.com/merisho/questfsm" />
       <item itemvalue="Go Build.go build test.go" />
       <item itemvalue="Go Test.TestEndHook in github.com/merisho/questfsm" />
       <item itemvalue="Go Test.TestForEachMission in github.com/merisho/quester" />
+      <item itemvalue="Go Test.TestEndHook in github.com/merisho/quester" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestEndHook in github.com/merisho/quester" />
         <item itemvalue="Go Test.go test github.com/merisho/questfsm" />
         <item itemvalue="Go Test.TestForEachMission in github.com/merisho/quester" />
         <item itemvalue="Go Test.TestEndHook in github.com/merisho/questfsm" />
         <item itemvalue="Go Build.go build test.go" />
-        <item itemvalue="Go Test.TestFinishedQuest in github.com/merisho/questfsm" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestEndHook_in_github_com_merisho_questfsm - 2018.09.29 at 05h 14m 09s.xml">
-      <configuration name="TestEndHook in github.com/merisho/questfsm" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestEndHook_in_github_com_merisho_questfsm - 2018.09.29 at 05h 16m 05s.xml">
-      <configuration name="TestEndHook in github.com/merisho/questfsm" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestEndHook_in_github_com_merisho_questfsm - 2018.09.29 at 05h 17m 31s.xml">
-      <configuration name="TestEndHook in github.com/merisho/questfsm" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="go_test_github_com_merisho_questfsm - 2018.09.29 at 05h 17m 36s.xml">
       <configuration name="go test github.com/merisho/questfsm" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -236,6 +226,15 @@
     </history-entry>
     <history-entry file="go_test_github_com_merisho_questfsm - 2018.09.30 at 09h 59m 25s.xml">
       <configuration name="go test github.com/merisho/questfsm" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="go_test_github_com_merisho_questfsm - 2018.09.30 at 10h 00m 12s.xml">
+      <configuration name="go test github.com/merisho/questfsm" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="go_test_github_com_merisho_questfsm - 2018.09.30 at 10h 00m 16s.xml">
+      <configuration name="go test github.com/merisho/questfsm" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestEndHook_in_github_com_merisho_quester - 2018.09.30 at 11h 07m 13s.xml">
+      <configuration name="TestEndHook in github.com/merisho/quester" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -364,15 +363,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/quest_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="105" column="64" selection-start-line="105" selection-start-column="64" selection-end-line="105" selection-end-column="64" />
+        <state relative-caret-position="548">
+          <caret line="141" column="47" selection-start-line="141" selection-start-column="47" selection-end-line="141" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/quest.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+        <state relative-caret-position="306">
+          <caret line="99" column="32" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
         </state>
       </provider>
     </entry>
