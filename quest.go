@@ -15,6 +15,7 @@ var (
 	QuestStartedErr = errors.New("quest is already started")
 	QuestNotStartedErr = errors.New("quest not started")
 	QuestFinishedErr = errors.New("quest finished")
+	NoTasksErr = errors.New("no tasks")
 )
 
 func NewQuest() *Quest {
