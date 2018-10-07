@@ -2,7 +2,6 @@ package quester
 
 import (
 	"testing"
-	"fmt"
 )
 
 func TestCurrentTask(t *testing.T) {

@@ -15,7 +15,6 @@ var (
 	QuestStartedErr = errors.New("quest is already started")
 	QuestNotStartedErr = errors.New("quest not started")
 	QuestFinishedErr = errors.New("quest finished")
-	NoTasksErr = errors.New("no tasks")
 )
 
 func NewQuest() *Quest {
@@ -72,6 +71,25 @@ func (q *Quest) Current() *Mission {
 	}
 
 	return q.missions[q.fsm.Current()]
+}
+
+func (q *Quest) ResolveCurrentTask(answer string) (res bool, err error) {
+	if !q.isStarted() {
+		return false, QuestNotStartedErr
+	}
+	if q.finished {
+		return false, QuestFinishedErr
+	}
+
+
+	m := q.Current()
+	res = m.ResolveCurrentTask(answer)
+
+	if m.IsFinished() {
+		err = q.PassCurrent()
+	}
+
+	return
 }
 
 func (q *Quest) PassCurrent() error {

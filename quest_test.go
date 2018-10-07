@@ -171,3 +171,23 @@ func TestForEachMission(t *testing.T) {
 		t.Fatal("ForEachMission() must iterate over each mission in quest")
 	}
 }
+
+func TestResolveCurrentTask(t *testing.T) {
+	q := NewQuest()
+	q.AddMission(Mission{
+		Tasks: Tasks{
+			{
+				Statement: "task 1",
+			},
+		},
+	}).Start()
+
+	_, err := q.ResolveCurrentTask("right answer")
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if !q.IsFinished() {
+		t.Fatal("Quest mast be finished after the last task has been resolved")
+	}
+}
